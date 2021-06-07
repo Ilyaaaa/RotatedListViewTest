@@ -15,8 +15,8 @@ namespace ListRendererTest
             InitializeComponent();
 
             var items = new List<string>();
-            for (int i = 0; i < 40; i++)
-                items.Add($"Message -{i}");
+            for (int i = 0; i < 5; i++)
+                items.Add($"Message {i}");
 
             list.ItemsSource = items;
         }

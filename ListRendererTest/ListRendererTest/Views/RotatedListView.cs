@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace ListRendererTest.Views
 {
-    public class RotatedListView : ListView
+    public class RotatedListView : CollectionView
     {
     }
 }

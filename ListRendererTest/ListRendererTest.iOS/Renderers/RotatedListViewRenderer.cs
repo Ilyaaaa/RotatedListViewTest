@@ -12,7 +12,7 @@ using Xamarin.Forms.Platform.iOS;
 [assembly: ExportRenderer(typeof(RotatedListView), typeof(RotatedListViewRenderer))]
 namespace ListRendererTest.iOS.Renderers
 {
-    class RotatedListViewRenderer : ListViewRenderer
+    class RotatedListViewRenderer : CollectionViewRenderer
     {
     }
 }
