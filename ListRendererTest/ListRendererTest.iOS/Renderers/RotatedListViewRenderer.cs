@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using CoreGraphics;
+using Foundation;
 using ListRendererTest.iOS.Renderers;
 using ListRendererTest.Views;
 using System;
@@ -14,5 +15,17 @@ namespace ListRendererTest.iOS.Renderers
 {
     class RotatedListViewRenderer : CollectionViewRenderer
     {
+        protected override void OnElementChanged(ElementChangedEventArgs<GroupableItemsView> e)
+        {
+            base.OnElementChanged(e);
+
+            if (Control != null)
+            {
+                NSArray s = Control.ValueForKey(new NSString("_subviewCache")) as NSMutableArray;
+                UICollectionView collection = s.GetItem<UICollectionView>(0);
+
+                collection.Transform = CGAffineTransform.MakeRotation((float)Math.PI);
+            }
+        }
     }
 }

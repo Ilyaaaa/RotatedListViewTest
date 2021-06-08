@@ -4,5 +4,19 @@
              xmlns:local="clr-namespace:ListRendererTest.Views;assembly=ListRendererTest"
              x:Class="ListRendererTest.MainPage">
 
-    <local:RotatedListView x:Name="list"/>
+    <local:RotatedListView x:Name="list">
+        <local:RotatedListView.ItemTemplate>
+            <DataTemplate>
+                <Label Text="{Binding }" FontSize="18">
+                    <Label.Rotation>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <OnPlatform.Platforms>
+                                <On Platform="iOS" Value="180" />
+                            </OnPlatform.Platforms>
+                        </OnPlatform>
+                    </Label.Rotation>
+                </Label>
+            </DataTemplate>
+        </local:RotatedListView.ItemTemplate>
+    </local:RotatedListView>
 </ContentPage>
